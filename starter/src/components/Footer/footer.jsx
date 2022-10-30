@@ -1,8 +1,9 @@
+import "./footer.css"
 const Footer = () => {
     return ( 
-    <div className="footer">
+    <footer className="footer">
         <h3>Created by Niklas Lindenbaum</h3>
-    </div>
+    </footer>
  );
 }
  

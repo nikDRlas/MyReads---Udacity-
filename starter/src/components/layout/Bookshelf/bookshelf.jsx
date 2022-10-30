@@ -1,17 +1,14 @@
 import Book from "../../Books/Book";
-const Bookshelf = ({title, relatedBooks, changeShelf}) => {
+const Bookshelf = ({ books, changeShelf}) => {
+
       
     return (  
         <div className="list-books-content">
             <div>
-              <div className="bookshelf">
-                <h2 className="bookshelf-title">{title}</h2>
-                <div className="bookshelf-books">
-                  <ol className="books-grid">
-                    <Book relatedBooks={relatedBooks} changeShelf={changeShelf}/>
-                  </ol> 
-                </div>
-              </div>
+                    <Book books={books.filter(book => book.shelf === 'currentlyReading')} title='Currently Reading' changeShelf={changeShelf}/>
+                    <Book books={books.filter(book => book.shelf === 'wantToRead')} title='Want to Read' changeShelf={changeShelf} />
+                    <Book books={books.filter(book => book.shelf === 'read')} title='Finished Reading'changeShelf={changeShelf} />
+                 
             </div>
           </div>
     );
