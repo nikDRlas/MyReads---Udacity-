@@ -9,7 +9,6 @@ import Navbar from "./components/layout/Navbar/navhbar";
 import { Route, Routes } from "react-router-dom";
 
 function App() {
-  const [showSearchPage, setShowSearchpage] = useState(false);
   const [books, setBooks] = useState([]);
   const [shelf, setShelf] = useState("none");
 
@@ -17,8 +16,8 @@ function App() {
     setShelf((book.shelf = selectedShelf));
 
     update(book, selectedShelf);
-    const newBook = books.filter((filterBook) => filterBook.id === book.id);
-    setBooks([...books, newBook]);
+    const addedBook = books.filter((filterBook) => filterBook.id === book.id);
+    setBooks([...books, addedBook]);
   };
 
   useEffect(() => {
@@ -52,30 +51,6 @@ function App() {
       </Routes>
       <Footer />
     </div>
-
-    // <div className="app">
-    //   {showSearchPage ? (
-    //     <SearchPage
-    //       setShowSearchpage={setShowSearchpage}
-    //       showSearchPage={showSearchPage}
-    //       books={books}
-    //       shelf={shelf}
-    //       changeShelf={changeShelf}
-    //     />
-    //   ) : (
-    //     <>
-    //       <Navbar
-    //         setShowSearchpage={setShowSearchpage}
-    //         showSearchPage={showSearchPage}
-    //       />
-    //       <Bookshelf books={books} changeShelf={changeShelf} shelf={shelf} />
-    //       <div className="open-search">
-    //         <a onClick={() => setShowSearchpage(!showSearchPage)}>Add a book</a>
-    //       </div>
-    //     </>
-    //   )}
-    //
-    // </div>
   );
 }
 

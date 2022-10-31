@@ -1,10 +1,7 @@
-import { useState } from "react";
+
 import "./navbar.css"
 import { Link } from "react-router-dom"
-const Navbar = ({setShowSearchpage, showSearchPage}) => {
-
-
-
+const Navbar = ({}) => {
 
     return (  
         <div className="list-books">
