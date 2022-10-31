@@ -36,12 +36,12 @@ const SearchPage = ({ changeShelf, shelf, books}) => {
 
     // eslint-disable-next-line no-lone-blocks
     searchedBooks && searchedBooks.map(searchResult => {
-        const matchingResults = books.filter(book => book.id === searchResult.id);
+        const booksWithSameId = books.filter(book => book.id === searchResult.id);
 
-        if (matchingResults.length > 0)
+        if (booksWithSameId.length > 0)
         {
 
-            return matchingBooks.push(...matchingResults);
+            return matchingBooks.push(...booksWithSameId);
 
         } 
 
