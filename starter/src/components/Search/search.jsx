@@ -50,7 +50,6 @@ const SearchPage = ({ changeShelf, shelf, books}) => {
         
     });
 
-console.log();
     return ( 
         <>
         <div className="search-books">
