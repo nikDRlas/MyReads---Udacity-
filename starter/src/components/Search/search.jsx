@@ -46,8 +46,7 @@ const SearchPage = ({ changeShelf, shelf, books}) => {
         } 
 
         return matchingBooks.push(searchResult)
-
-        
+  
     });
 
     return ( 
